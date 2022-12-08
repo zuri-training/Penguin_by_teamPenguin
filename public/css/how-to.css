@@ -12,3 +12,13 @@ body::-webkit-scrollbar {
 body {
     font-family: 'Merriweather', serif;
 }
+
+:root {
+    --primary-color: #BA5A31;
+    --secondary-color: #E59F71;
+    --color-grey: #403D39;
+    --error: #F02222;
+    --success: #35F084;
+    --warning: #F3C020;
+    --info: #2F80ED;
+}
