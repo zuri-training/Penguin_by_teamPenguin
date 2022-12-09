@@ -10,10 +10,30 @@ body::-webkit-scrollbar {
 }
 
 body {
+    overflow-x: hidden;
+    color: var(--background-color);
     font-family: 'Merriweather', serif;
 }
 
+/* declaring reusable styles */
+ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+li {
+    font-size: 0.8rem;
+    list-style: none;
+}
+a {
+    color: var(--color-grey);
+    text-decoration: none;
+}
+.active {
+    color: #BA5A31;
+}
 :root {
+    --background-color: #FEFAEC;
     --primary-color: #BA5A31;
     --secondary-color: #E59F71;
     --color-grey: #403D39;
@@ -21,4 +41,35 @@ body {
     --success: #35F084;
     --warning: #F3C020;
     --info: #2F80ED;
+}
+
+/* navbar css properties */
+.navbar {
+    padding: 3% 7%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-container {
+    width: 5%;
+}
+.logo-container img {
+    width: 100%;
+}
+
+.navbar-1 {
+    width: 25%;
+}
+
+.navbar-2 {
+    width: 20%;
+}
+.navbar-2 .icons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-2 .icons img {
+    width: 15px;
 }
