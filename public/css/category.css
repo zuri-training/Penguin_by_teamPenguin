@@ -11,11 +11,16 @@ body::-webkit-scrollbar {
 
 body {
     overflow-x: hidden;
-    color: var(--background-color);
+    background-color: var(--background-color);
     font-family: 'Merriweather', serif;
 }
 
 /* declaring reusable styles */
+h3 {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--color-grey);
+}
 ul {
     display: flex;
     width: 100%;
@@ -71,5 +76,74 @@ a {
     justify-content: space-between;
 }
 .navbar-2 .icons img {
-    width: 15px;
+    width: 17%;
+}
+
+/* category css properties */
+
+.category {
+    padding: 2% 10%;
+}
+.category-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+.--category{
+    margin: 3% 0;
+    padding: 2%;
+    width: 15%;
+    height: 30vh;
+    /* height: 14vh; */
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px 4px rgba(225, 225, 225, 0.6);
+}
+.category-container img {
+    width: 30%;
+}
+.category-1 img,
+.category-3 img
+ {
+    margin-bottom: 14%;
+}
+.--category:hover {
+    box-shadow: 0px 4px 8px 8px rgba(225, 225, 225, 0.6);
+}
+.phones {
+    margin-bottom: 15%;
+}
+.brands {
+    padding: 10% 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.brands div {
+    width: 110%;
+    margin: 5% 0;
+    display: flex;
+    justify-content: space-between;
+}
+.brands p {
+    width: 100%;
+    color: var(--primary-color);
+    font-size: 0.6rem;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+.hide {
+    visibility: hidden;
+}
+.all-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    cursor: pointer;
 }
