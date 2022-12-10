@@ -94,18 +94,16 @@ a {
     margin: 3% 0;
     padding: 2%;
     width: 15%;
-    height: 30vh;
-    /* height: 14vh; */
+    height: 14vh;
     text-align: center;
     border-radius: 16px;
     box-shadow: 0px 4px 8px 4px rgba(225, 225, 225, 0.6);
+    transition: 0.2s ease-in-out;
 }
 .category-container img {
     width: 30%;
 }
-.category-1 img,
-.category-3 img
- {
+.margin-bottom {
     margin-bottom: 14%;
 }
 .--category:hover {
@@ -120,6 +118,7 @@ a {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    display: none;
 }
 .brands div {
     width: 110%;
@@ -136,10 +135,6 @@ a {
     cursor: pointer;
 }
 
-
-.hide {
-    visibility: hidden;
-}
 .all-products {
     display: flex;
     align-items: center;
