@@ -23,25 +23,25 @@ let brand10 = document.getElementById('brand-10')
 
 function showNavOne() {
     brand1.style.display = 'flex';
-    category1.style.height = '26vh'
+    category1.style.height = '28vh'
 }
 function hideNavOne() {
     brand1.style.display = 'none';
-    category1.style.height = '14vh'
+    category1.style.height = '15vh'
 }
 
 function showNavTwo() {
     brand2.style.display = 'flex';
-    category2.style.height = '27vh'
+    category2.style.height = '28vh'
 }
 function hideNavTwo() {
     brand2.style.display = 'none';
-    category2.style.height = '14vh'
+    category2.style.height = '15vh'
 }
 
 function showNavThree() {
     brand3.style.display = 'flex';
-    category3.style.height = '27vh'
+    category3.style.height = '28vh'
 }
 function hideNavThree() {
     brand3.style.display = 'none';
@@ -50,7 +50,7 @@ function hideNavThree() {
 
 function showNavFour() {
     brand4.style.display = 'flex';
-    category4.style.height = '28vh'
+    category4.style.height = '30vh'
 }
 function hideNavFour() {
     brand4.style.display = 'none';
@@ -59,7 +59,7 @@ function hideNavFour() {
 
 function showNavFive() {
     brand5.style.display = 'flex';
-    category5.style.height = '30vh'
+    category5.style.height = '32vh'
 }
 function hideNavFive() {
     brand5.style.display = 'none';
@@ -68,7 +68,7 @@ function hideNavFive() {
 
 function showNavSix() {
     brand6.style.display = 'flex';
-    category6.style.height = '27vh'
+    category6.style.height = '29vh'
 }
 function hideNavSix() {
     brand6.style.display = 'none';
@@ -77,7 +77,7 @@ function hideNavSix() {
 
 function showNavSeven() {
     brand7.style.display = 'flex';
-    category7.style.height = '23vh'
+    category7.style.height = '25vh'
 }
 function hideNavSeven() {
     brand7.style.display = 'none';
@@ -86,7 +86,7 @@ function hideNavSeven() {
 
 function showNavEight() {
     brand8.style.display = 'flex';
-    category8.style.height = '29vh'
+    category8.style.height = '30vh'
 }
 function hideNavEight() {
     brand8.style.display = 'none';
@@ -95,7 +95,7 @@ function hideNavEight() {
 
 function showNavNine() {
     brand9.style.display = 'flex';
-    category9.style.height = '29vh'
+    category9.style.height = '30vh'
 }
 function hideNavNine() {
     brand9.style.display = 'none';
