@@ -1,0 +1,20 @@
+{
+  "name": "penguin_by_teampenguin",
+  "version": "1.0.0",
+  "description": "A platform that compares prices across multiple platforms. Feature Requests",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuri-training/Penguin_by_teamPenguin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuri-training/Penguin_by_teamPenguin/issues"
+  },
+  "homepage": "https://github.com/zuri-training/Penguin_by_teamPenguin#readme"
+}
