@@ -11,6 +11,7 @@ body::-webkit-scrollbar {
 
 body {
     font-family: 'Merriweather', serif;
+    background-color: #FEFAEC;
 }
 
 :root {
@@ -22,3 +23,110 @@ body {
     --warning: #F3C020;
     --info: #2F80ED;
 }
+
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 20px;
+    position: absolute;
+    margin: 8% auto 0;
+    width: 400px;
+    height: 400px;
+    left: 30%;
+    top: 30px;
+    background: #FEFAEC;
+    box-shadow: 0px 6px 15px 2px rgba(99, 108, 103, 0.2);
+    border-radius: 8px;
+
+}
+h4{
+width: 100px;
+height: 32px;
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 42px;
+color: #474739;
+margin: 8px;
+margin-bottom: 20px;
+margin-right: 100px;
+}
+.box{
+    box-sizing: border-box;
+    width: 300px;
+    background: #FEFAEC;
+    border: 1px solid #807E7B;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    flex: none;
+
+     }
+     #text{
+      border: 0;
+      width: 300px;
+      height: 35px;
+      margin-left: 20px;
+      background-color: #FEFAEC;
+      font-size: smaller;
+        
+    }
+    .up{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 16px;
+        background: #BA5A31;
+        color: #FEFAEC;
+        border-radius: 8px;
+        width: 252px;
+        height: 25px;
+        justify-content: center;
+        border: 0;
+        margin-left: 15px;
+        }
+
+        .already{
+            display: flexbox;
+            margin-top: 35px;
+            flex-direction: row;
+            font-size: smaller;
+            justify-content: center;
+            text-align: center;
+        }
+        .line{
+            display: flex;
+            flex-direction: row;
+            font-size: smaller;
+          }
+          .line:before, :after{
+            content: "";
+            flex: 1 1;
+            border-bottom: 1px solid;
+            margin: auto;
+          }
+          .line:before {
+            margin-right: 8px
+          }
+          .line:after {
+            margin-left: 8px
+          }
+          .continue{
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            text-align: center;
+            width: 200px;
+            height: auto;
+            font-weight: 400;
+            margin-top: 0%;
+            margin-left: 50px;
+      
+      }
+      ::placeholder{
+        color: rgb(212, 212, 212);
+        opacity: 1;
+      }
+          

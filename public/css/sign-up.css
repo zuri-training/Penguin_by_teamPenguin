@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
 
-* {
+* , *:before, * :after{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
@@ -22,3 +23,372 @@ body {
     --warning: #F3C020;
     --info: #2F80ED;
 }
+
+body{ 
+    background: #FEFAEC;
+    text-decoration: none;
+}
+ 
+#main-container{
+    background-color: #FEFAEC;
+}
+ 
+ .navbar {
+    width: 100%;
+    justify-content: center;
+    padding: 5px;
+    top: 50px;
+    position: absolute;
+  
+ }
+
+ .ourlogo{
+  height: 80px;
+ }
+ .topbar, .bartop{
+    display: flex;
+   padding: 10px 10vw;
+   width: 20px;
+   justify-content: space-between;
+ }
+ 
+ 
+
+ .navbar ul li a{
+text-decoration: none;
+color: #403D39;
+
+ }
+
+ .icons{
+    width: 50px;
+    display: flex;
+    padding: 10px 10vw;
+    justify-content: space-between;
+ }
+
+ .bartop :hover{
+  opacity: 1;
+  text-decoration: underline;
+  color: #044292;
+ }
+ .size{
+    width: 25px;
+    height: 25px;
+    top: 2px;
+    left: 2px;
+    gap: 25px;
+    margin-right: 50px;
+ }
+ .size1{
+    width: 30px;
+    top: 2px;
+    left: 2px;
+    gap: 25px;
+    margin-right: 50px;
+    height: 30px;
+ }
+ .details{
+    display: inline-flex;
+    list-style-type: none;
+    text-decoration: none;
+    
+ }
+ .pages{
+    justify-content: space-between;
+    margin-right: 30px;
+    width: 80px;
+    text-decoration: none;
+    size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+ }
+ 
+ .formal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+    position: absolute;
+    margin: 8% auto 0;
+    width: 674px;
+    height: 645px;
+    left: 25%;
+    top: 190px;
+    background: #FEFAEC;
+    box-shadow: 0px 6px 15px 2px rgba(99, 108, 103, 0.2);
+    border-radius: 8px;
+ }
+ .one{
+    border-radius: 12px;
+    font-size: small;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+ }
+ h4{
+width: 112px;
+height: 42px;
+font-weight: 700;
+font-size: 34px;
+line-height: 42px;
+color: #474739;
+margin-top: 40px;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 10px;
+
+width: 542px;
+height: 42px;
+ }
+ 
+ 
+
+ .box{
+box-sizing: border-box;
+width: 400px;
+background: #FEFAEC;
+border: 1px solid #807E7B;
+border-radius: 4px;
+margin-top: 20px;
+margin-left: 35px;
+overflow: hidden;
+ }
+
+ #text{
+    border: 0;
+    width: 400px;
+    height: 35px;
+    margin-left: 20px;
+    background-color: #FEFAEC;
+    font-size: smaller;
+
+
+    
+ }
+ .button{
+   text-align: center;
+   margin: 0;
+   position: absolute;
+   left: 22%;
+   margin-top: 8px;  
+ }
+
+ .up{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 10px 16px;
+background: #BA5A31;
+color: #FEFAEC;
+border-radius: 8px;
+width: 252px;
+height: auto;
+justify-content: center;
+border: 0;
+margin-left: 58px;
+margin-top: 10px;
+}
+
+::placeholder{
+   color: rgb(212, 212, 212);
+   opacity: 1;
+}
+.already{
+   margin-top: 55px;
+   flex-direction: row;
+   font-size: smaller;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 195px ;
+   
+}
+
+.line{
+        
+        flex-direction: row;
+        font-size: smaller;
+        margin-top: 20px auto;
+        position: relative;
+        text-align: center;
+      }
+     /* .line:before, :after{
+        content: "";
+        flex: 1 1;
+        border-bottom: 1px solid;
+        margin: auto;
+      }*/
+      .line:before {
+        content:" ";
+  display: block;
+  height: 2px;
+  width: 130px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  flex: 1 1;
+        margin-right: 8px
+      }
+      .line:after {
+        margin-left: 8px
+      }
+
+   .continue{
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      text-align: center;
+      width: 200px;
+      height: auto;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 0%;
+      margin-left: 170px;
+      background-color: #FEFAEC;
+      color: #403D39;
+
+
+}
+ .navbar :hover{
+ 
+   text-decoration: underline;
+   color: #044292;
+   
+}
+
+
+ .direct{
+    width: 133px;
+height: 22px;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+color: #474739;
+ }
+ .Sign{
+text-decoration: none;
+width: 10px;
+height: 22px;
+font-family: 'Merriweather';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 22px;
+text-align: center;
+color: #BA5A31;
+ }
+ button :hover{
+  text-decoration: underline;
+  color: #044292;
+  
+ }
+ footer{
+   position: relative;
+   bottom: 0;
+   width: 100%;
+   padding: 40px 10vw;
+   background-color: #FAECE3;
+   padding-bottom: 80px;
+   margin-top: 100%;
+   padding-bottom: 2.5rem
+ }
+ .footer-container{
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   font-size: small;
+   bottom: 0;
+   position: relative;
+ }
+
+ .footlogo{
+height: 80px;
+
+ }
+ .footer-container, .footer-icons{
+   display: flex;
+   width: 80%;
+   justify-content: space-between;
+ }
+.footer-icons{
+   flex-direction: column;
+   margin: auto;
+   width: auto;
+   padding-right: 100px;
+   
+}
+
+
+
+ .footer-list1{
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   padding-right: 100px;
+   
+ }
+ .footer1{
+   list-style: none;
+ }
+ .bottom-link{
+   color: #403D39;
+   text-decoration: none;
+   grid-column: span 2;
+   
+ }
+ .ourclass{
+   margin-top: 0px;
+   list-style:none ;
+   display: flex;
+   width: 100%;
+   padding-right: 50px;
+ }
+ 
+ .footer-title{
+   grid-column: span 2;
+    text-transform: capitalize;
+    color: #9B4B29;
+    font-size: 20px;
+    margin-bottom: 20px;
+ }
+ .footer-list1, .footer-link{
+   text-decoration: none;
+    text-transform: capitalize;
+    color: #403D39 ;
+ }
+ 
+
+ .footer-link{
+   display: flex;
+ }
+ .footlink :hover{
+   text-decoration: underline;
+   color: #044292;
+ }
+ .footer-list1 li :hover{
+   color: #044292;
+   text-decoration: underline;
+ }
+ .footer-icons ul li{
+  list-style: none ;
+  flex-direction: row;
+ }
+ 
+ @media screen and (max-width: 400px) {
+  .topbar, .bartop  {
+    float: none;
+    width: 100%;
+    flex-direction: column;
+  }
+  }
+ 
+ @media screen and (max-width: 600px){
+  .main-container {
+    width: 100%;
+  }
+  
+ }
