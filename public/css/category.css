@@ -238,6 +238,8 @@ footer p {
     cursor: pointer;
 }
 
+
+/* ---iphone X  */
 @media only screen 
     and (device-width: 375px) 
     and (device-height: 812px) 
@@ -414,3 +416,368 @@ footer p {
         width: 90%;
     }
 }
+
+/* ---iphone 6,7,8 plus  */
+@media only screen 
+    and (device-width: 414px) 
+    and (device-height: 736px) 
+    and (-webkit-device-pixel-ratio: 3) {
+    
+    
+    .navbar-1,
+    .navbar-2
+     {
+        display: none;
+    }
+    /* classes to be toggled (media query)-- */
+    .display {
+        display: block;
+    }
+    .margin-left {
+        margin-left: 82%;
+    }
+    /* end--- */
+
+    .navbar-1 {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        background-color: var(--background-color);
+        height: 100vh;
+        padding: 5%;
+    }
+    .navbar-1 ul {
+        flex-direction: column;
+    }
+    .navbar-1 li {
+        margin: 5% 0;
+    }
+    .navbar-2 .icons {
+        position: absolute;
+        top: 290%;
+        left: 30%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        padding: 10%;
+    }
+    /* ---the navbar as a whole */
+    .navbar {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding: 7%;
+        position: fixed;
+        top: 0;
+        background-color: var(--background-color);
+        box-shadow: 0px 4px 8px 2px rgba(225, 225, 225, 0.6);
+    }
+    .logo-container {
+        width: 97%;
+        justify-content: space-between;
+    }
+    .logo-container img {
+        width: 15%;
+    }
+    .logo-container img:nth-child(2) {
+        width: 10%;
+    }
+    /* ---burger menu */
+    .menu { 
+        display: block;
+    }
+
+
+    header
+     {
+        margin-top: 35%;
+    }
+    header {
+        margin-left: 7%;
+    }
+    header h3 {
+        font-size: 0.8rem;
+    }
+
+
+    .category {
+        padding: 0;
+        margin: 0;
+        padding: 3% 5%;
+    }
+    .--category {
+        padding: 0;
+        margin: 0;
+        width: 45%;
+        height: 20vh;
+        margin: 4% 2%;
+    }
+    .--category h3 {
+        font-size: 0.7rem;
+    }
+    .category-container img {
+        width: 36%;
+        margin-top: 16%;
+    }
+    .brands div {
+        width: 80%;
+        margin: 0;
+        margin: 1% 0;
+        margin-left: 10%;
+    }
+    .brands p {
+        font-size: 0.5rem;
+        padding: 5%;
+    }
+
+
+    .bottom-nav {
+        flex-direction: column;
+        padding: 10% 5% 12% 5%;
+    }
+
+    .left {
+        width: 100%;
+        margin: 0;
+        align-items: center;
+    }
+    .left .logo-container {
+        width: 50%;
+    }
+    .left .icon-container {
+        width: 50%;
+    }
+    .left .logo-container img {
+        width: 70%;
+        margin: 0;
+        margin-left: 15%;
+    }
+
+
+    .right {
+        width: 100%;
+        margin-top: 7%;
+    }
+    .right ul li {
+        font-size: 0.6rem;
+        margin: 7px 0;
+    }
+    .right ul {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .right h3 {
+        width: 100px;
+    }
+
+
+
+    .footer {
+        display: block;
+        width: 100%;
+    }
+    footer {
+        padding: 3%;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    footer p {
+        font-size: 0.5rem;
+    }
+    footer div:nth-child(1) {
+        margin-top: 3%;
+        padding: 2% 0;
+    }
+    footer div:nth-child(2) {
+        width: 90%;
+    }
+}
+
+/* ---ipad */
+@media only screen 
+    and (device-width: 768px) 
+    and (device-height: 1024px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    
+    
+    .navbar-1,
+    .navbar-2
+     {
+        display: none;
+    }
+    /* classes to be toggled (media query)-- */
+    .display {
+        display: block;
+    }
+    .margin-left {
+        margin-left: 77%;
+    }
+    .margin-bottom {
+        margin-bottom: 13%;
+    }
+    .phones {
+        margin-bottom: 12%;
+    }
+    /* end--- */
+
+    .navbar-1 {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        background-color: var(--background-color);
+        height: 100vh;
+        padding: 15%;
+    }
+    .navbar-1 ul {
+        flex-direction: column;
+    }
+    .navbar-1 li {
+        margin: 5% 0;
+    }
+    .navbar-2 .icons {
+        position: absolute;
+        top: 290%;
+        left: 30%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        padding: 10%;
+    }
+    /* ---the navbar as a whole */
+    .navbar {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding: 7%;
+        position: fixed;
+        top: 0;
+        background-color: var(--background-color);
+        box-shadow: 0px 4px 8px 2px rgba(225, 225, 225, 0.6);
+    }
+    .logo-container {
+        width: 97%;
+        justify-content: space-between;
+    }
+    .logo-container img {
+        width: 10%;
+    }
+    .logo-container img:nth-child(2) {
+        width: 5%;
+    }
+    /* ---burger menu */
+    .menu { 
+        display: block;
+    }
+
+
+    header
+     {
+        margin-top: 35%;
+    }
+    header {
+        margin-left: 7%;
+    }
+    header h3 {
+        font-size: 0.8rem;
+    }
+
+
+    .category {
+        padding: 0;
+        margin: 0;
+        padding: 3% 5%;
+    }
+    .--category {
+        padding: 0;
+        margin: 0;
+        width: 45%;
+        height: 21vh;
+        margin: 4% 2%;
+    }
+    .category-container img {
+        width: 36%;
+        margin-top: 5%;
+    }
+    .brands div {
+        width: 80%;
+        margin: 0;
+        margin-left: 10%;
+    }
+    .brands p {
+        font-size: 0.5rem;
+        padding: 5%;
+    }
+
+
+    .bottom-nav {
+        flex-direction: column;
+        padding: 10% 5% 12% 5%;
+    }
+
+    .left {
+        width: 100%;
+        margin: 0;
+        align-items: center;
+    }
+    .left .logo-container {
+        width: 50%;
+    }
+    .left .icon-container {
+        width: 50%;
+    }
+    .left .logo-container img {
+        width: 70%;
+        margin: 0;
+        margin-left: 15%;
+    }
+
+
+    .right {
+        width: 100%;
+        margin-top: 7%;
+    }
+    .right ul li {
+        font-size: 0.6rem;
+        margin: 7px 0;
+    }
+    .right ul {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .right h3 {
+        width: 100px;
+    }
+
+
+
+    .footer {
+        display: block;
+        width: 100%;
+    }
+    footer {
+        padding: 3%;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    footer p {
+        font-size: 0.5rem;
+    }
+    footer div:nth-child(1) {
+        margin-top: 3%;
+        padding: 2% 0;
+    }
+    footer div:nth-child(2) {
+        width: 90%;
+    }
+}
+
