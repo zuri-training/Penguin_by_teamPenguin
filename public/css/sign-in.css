@@ -1,24 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body {
-    font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', serif;
+  background-color: #FEFAEC;
 }
 
 :root {
-    --primary-color: #BA5A31;
-    --secondary-color: #E59F71;
-    --color-grey: #403D39;
-    --error: #F02222;
-    --success: #35F084;
-    --warning: #F3C020;
-    --info: #2F80ED;
+  --primary-color: #BA5A31;
+  --secondary-color: #E59F71;
+  --color-grey: #403D39;
+  --error: #F02222;
+  --success: #35F084;
+  --warning: #F3C020;
+  --info: #2F80ED;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.wrapper {
+  padding: 20px;
+  box-shadow: 0px 6px 15px 2px rgba(99, 108, 103, 0.2);
+  background-color: #FEFAEC;
+}
+.wrapper h3 {
+  padding: 20px 0;
+  border-radius: 8px;
+}
+.input {
+  position: relative;
+  margin: 28px 0;
+}
+.input label {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  font-size: 10px;
+  background-color: #FEFAEC;
+}
+input {
+  width: 350px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+  border-width: 1px;
+  padding-left: 13px;
+}
+input:focus {
+  border-width: 1px;
+  outline: none;
+}
+::placeholder {
+  font-size: 10px;
+}
+
+.btn button {
+  border: none;
+  padding: 10px 120px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #FEFAEC;
+  font-size: 12px;
+}
+.btn button:hover {
+  background-color: #FEFAEC;
+  color: #BA5A31;
+  border: 1px solid #BA5A31;
+}
+.extras p{
+  text-align: center;
+  font-size: 10px;
+  padding-bottom: 23px;
+}
+.extras p:first-of-type {
+  margin-top: 5px;
+}
+.extras p:last-of-type {
+  margin-top: -9px;
+  background-color: #FEFAEC;
+}
+.extras p:first-of-type a {
+  text-decoration: none;
+  color: #BA5A31;
+}
+.extras p:first-of-type a:hover {
+  text-decoration: underline;
+}
+.google div {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: transparent;
+}
+.google div img {
+  width: 12px;
+  padding-right: 3px;
+
+}
+.google button {
+  border: none;
+  font-size: 12px;
+  background-color: inherit;
 }
