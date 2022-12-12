@@ -271,13 +271,17 @@ h2 {
     border-radius: 15px;
     padding: 0 10px;
     width: 250px !important;
-    height: 200px !important;
+    height: auto;
     background-color: rgba(254, 250, 236, 1);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    transition: height 0.5s ease-in-out;
+}
+.category:last-of-type {
+    height: 100px !important;
 }
 
-.category:last-of-type {
+.category:last-of-type a {
     color: #BA5A31;
 }
 .category img {
@@ -288,6 +292,26 @@ h2 {
 .category .cathead {
     margin-top: 20px;
     font-size: 10px;
+}
+.category .hide-list {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 8px;
+    transition: display 0.5s ease-in-out;
+}
+.category:hover .hide-list {
+    display: flex;
+}
+.category .hide-list p {
+    line-height: 0;
+}
+.category .hide-list p a {
+    color: #BA5A31;
+}
+.category .hide-list p a:hover {
+    text-decoration: underline;
 }
 
 /* ABOUT PAGE */
@@ -485,7 +509,7 @@ footer .footer-extras .footer-extra ul {
     }
     .category {
         width: 120px !important;
-        height: 120px !important;
+        /* height: 120px !important; */
     }
     .category img {
         width: 50px;
