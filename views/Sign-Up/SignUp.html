@@ -11,43 +11,56 @@
     <link rel="stylesheet" href="../../public/css/footer.css">
 </head>
 <body>
-    <nav class="nav">
-        <img src="../../public/images/category-page/Logo.png" alt="logo">
-        <div class="burger">
-            <i class="fa-regular fa-xmark"></i>
-            <i class="fa fa-bars"></i>
+    <section class="navbar">
+        <div class="logo-container">
+            <img src="/public/images/category-page/Logo.png" alt="the penguin logo">
+            <img src="/public/images/category-page/menu.svg" alt="" class="menu"    id="menu">
         </div>
-        <ul class="links">
-            <li><a href="../Home/home.html">Home</a></li>
-            <li><a href="../Category/Category.html">Categories</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">How-to</a></li>
-        </ul>
-        <div class="icon">
-            <img src="../../public/images/category-page/search-icon.png" alt="">
-            <img src="../../public/images/category-page/profile-icon.svg" alt="">
-            <img src="../../public/images/signIn-page/save-icon.png" alt="">
+        <div class="navbar-1"   id="nav1">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../Home/home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../Category/Category.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="../About-Us/About-Us.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="../How-To/How-To.html">How To</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+        <div class="navbar-2"   id="nav2">
+            <div class="icons">
+                <img src="/public/images/category-page/search-icon.png" alt="a search icon">
+                <img src="/public/images/category-page/profile-icon.svg" alt="a profile icon">
+                <img src="/public/images/category-page/Header-Save-Icon.svg" alt="a save icon">
+            </div>
+        </div>
+    </section>
     <div class="container">
         <div class="wrapper">
         <h3>Sign Up</h3>
             <form action="">
                 <div class="input">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Team Penguine">
+                    <input type="text" id="name" placeholder="Team Penguine" autocomplete="name">
                 </div>
                 <div class="input">
                     <label for="email">Email Address</label>
-                    <input type="text" id="email" placeholder="example@gmail.com">
+                    <input type="text" id="email" placeholder="example@gmail.com" autocomplete="email">
                 </div>
                 <div class="input">
                     <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="********">
+                    <input type="password" id="password" placeholder="********" autocomplete="current-password">
                 </div>
                 <div class="input">
                     <label for="c-password">Confirm Password</label>
-                    <input type="password" id="c-password" placeholder="********">
+                    <input type="password" id="c-password" placeholder="********" autocomplete="current-password"s>
                 </div>
                 <div class="btn center">
                     <button>Sign Up</button>
@@ -67,69 +80,63 @@
         </div>
     </div>
     <!-- FOOTER 1 SECTION -->
-    <footer id="footer">
-        <div class="footer-items">
-            <div class="one">
-                <div class="footer-item center">
-                    <div class="image">
-                        <img src="../../public/images/category-page/Logo.png" alt="logo">
-                    </div>
-                    <div class="socials">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                    </div>
-                </div>
+    <section class="bottom-nav">
+        <div class="left">
+            <div class="logo-container">
+                <img src="/public/images/category-page/Logo.png" alt="">
             </div>
-            <div class="two">
-                <div class="footer-item">
-                    <h6>Penguine</h6>
-                    <ul>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Contact Us</a></li>
-                        <li><a href="">Coming Soon</a></li>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">Collaborations</a></li>
-                    </ul>
-                </div>
-                <div class="footer-item">
-                    <h6>Learn More</h6>
-                    <ul>
-                        <li><a href="">Getting Started</a></li>
-                <li><a href="">Safe shopping</a></li>
-                <li><a href="">Memebership</a></li>
-                <li><a href="">Product Reviews</a></li>
-                <li><a href="">FAQ</a></li>
-            </ul>
+            <div class="icon-container">
+                <img src="/public/images/category-page/Facebook-icon.svg" alt="a facebook-icon">
+                <img src="/public/images/category-page/Instagram-icon.svg" alt="an instagram-icon">
+                <img src="/public/images/category-page/Twitter-icon.svg" alt="a twitter-icon">
+                <img src="/public/images/category-page/LinkedIn-icon.svg" alt="a linkedin-icon">
+            </div>
         </div>
-        <div class="footer-item">
-            <h6>Partners & Advertisers</h6>
-            <ul>
-                <li><a href="">Register your shop</a></li>
-                <li><a href="">Register your brand</a></li>
-                <li><a href="">Advertising</a></li>
-                <li><a href="">Penguine API</a></li>
-            </ul>
+        <div class="right">
+            <nav>
+                <h3>Penguin</h3>
+                <ul>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Coming soon</li>
+                    <li>Careers</li>
+                    <li>Collaborations</li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Learn More</h3>
+                <ul>
+                    <li>Getting Started</li>
+                    <li>Safe shopping</li>
+                    <li>Membership</li>
+                    <li>Product Reviews</li>
+                    <li>FAQ</li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Partners & Advertisers</h3>
+                <ul>
+                    <li>Register your shop</li>
+                    <li>Register your brand</li>
+                    <li>Advertising</li>
+                    <li>Penguin API</li>
+                </ul>
+            </nav>
         </div>
-    </div>
-    </div>
-<hr>
-<div class="footer-extras">
-    <div class="footer-extra">
-        <span>2022, All rights reserved.</span>
-    </div>
-    <div class="footer-extra">
-        <ul>
-            <li><a href="">Privacy Policies</a></li>
-            <li><a href="">Terms of Service</a></li>
-            <li><a href="">Cookies Settings</a></li>
-        </ul>
-    </div>
-</div>
-</footer>
-    <script src="script.js"></script>
-                  
-    
+    </section>
+
+    <section class="footer">
+        <footer>
+            <div>
+                <p>© 2022, All right reserved.</p>
+            </div>
+            <div>
+                <p>Privacy Policy</p>
+                <p>Terms of Service</p>
+                <p>Cookies Settings</p>
+            </div>
+        </footer>
+    </section>
+    <script src="/public/js/navbar.js"></script>
 </body>
 </html>

@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Merriweather:wght@300;400;700;900&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 body {
-  font-family: 'Merriweather', serif;
-  background-color: #FEFAEC;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    font-family: 'Merriweather', serif;
 }
 
 :root {
@@ -33,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin: 50px 0 100px 0;
 }
 .wrapper {
   padding: 20px;
@@ -118,4 +120,9 @@ input:focus {
   border: none;
   font-size: 12px;
   background-color: inherit;
+}
+@media  screen and (max-width: 800px) {
+  .container {
+    margin: 200px 0 100px 0;
+  }
 }

@@ -1,47 +1,310 @@
-
-.nav {
+/* ---declaring reusable styles */
+h3 {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--color-grey);
+}
+ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+li {
+    font-size: 0.8rem;
+    list-style: none;
+    cursor: pointer;
+}
+li:hover a {
+    color: #BA5A31;
+}
+a {
+    color: var(--color-grey);
+    text-decoration: none;
+}
+.active {
+    color: #BA5A31;
+}
+:root {
+    --background-color: #FEFAEC;
+    --primary-color: #BA5A31;
+    --secondary-color: #E59F71;
+    --color-grey: #403D39;
+    --error: #F02222;
+    --success: #35F084;
+    --warning: #F3C020;
+    --info: #2F80ED;
+}
+/* ---navbar css properties */
+.navbar {
+    padding: 3% 7%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'Merriweather', serif;
-    margin: 20px 0;
-    padding: 0 20px;
+    z-index: 20;
 }
-.nav img {
-    width: 80px;
+.logo-container {
+    width: 5%;
+    display: flex;
 }
-.nav .burger {
-    font-size: 40px;
+.logo-container img {
+    width: 100%;
+}
+.menu {
+    display: none;
+}
+
+.navbar-1 {
+    width: 25%;
+}
+
+.navbar-2 {
+    width: 13%;
+}
+.navbar-2 .icons {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-2 .icons img {
+    width: 17%;
     cursor: pointer;
-    display: none;
 }
-.nav .burger .fa-xmark {
-    display: none;
+.navbar-2 .icons img:hover {
+    color: #BA5A31;
 }
-.nav ul li {
-    display: inline-block;
-    padding: 0 30px;
-}
-a {
-    color: black;
-    text-decoration: none;
-}
-a:hover {
-    color: brown;
-    font-weight: 600;
-}
-.nav .icon img {
-    width: 26px;
-    margin-right: 15px;
-}
-@media screen and (max-width: 778px) {
-    .nav {
-        justify-content: space-between;
+/* ---iphone X  */
+@media only screen 
+    and (max-width: 375px) {
+    
+    
+    .navbar-1,
+    .navbar-2
+     {
+        display: none;
     }
-    .nav .burger {
+    /* classes to be toggled (media query)-- */
+    .display {
         display: block;
     }
-    .nav .links,.nav .icon {
+    .margin-left {
+        margin-left: 77%;
+    }
+    /* end--- */
+
+    .navbar-1 {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        background-color: var(--background-color);
+        height: 100vh;
+        padding: 5%;
+    }
+    .navbar-1 ul {
+        flex-direction: column;
+    }
+    .navbar-1 li {
+        margin: 5% 0;
+    }
+    .navbar-2 {
+        margin-top: 50px;
+    }
+    .navbar-2 .icons {
+        position: absolute;
+        top: 290%;
+        left: 30%;
+        padding: 0;
+        margin-left: -7%;
+        text-align: center;
+        padding: 10%;
+    }
+    /* ---the navbar as a whole */
+    .navbar {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding: 7%;
+        position: fixed;
+        top: 0;
+        background-color: var(--background-color);
+        box-shadow: 0px 4px 8px 2px rgba(225, 225, 225, 0.6);
+    }
+    .logo-container {
+        width: 97%;
+        justify-content: space-between;
+    }
+    .logo-container img {
+        width: 20%;
+    }
+    .logo-container img:nth-child(2) {
+        width: 10%;
+    }
+    /* ---burger menu */
+    .menu { 
+        display: block;
+    }
+}
+
+/* ---iphone 6,7,8 plus  */
+@media only screen 
+    and (max-width: 414px) {
+    
+    
+    .navbar-1,
+    .navbar-2
+     {
         display: none;
+    }
+    /* classes to be toggled (media query)-- */
+    .display {
+        display: block;
+    }
+    .margin-left {
+        margin-left: 82%;
+    }
+    /* end--- */
+
+    .navbar-1 {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        background-color: var(--background-color);
+        height: 100vh;
+        padding: 5%;
+    }
+    .navbar-1 ul {
+        flex-direction: column;
+    }
+    .navbar-1 li {
+        margin: 5% 0;
+    }
+    .navbar-2 {
+        margin-top: 50px;
+    }
+    .navbar-2 .icons {
+        position: absolute;
+        top: 290%;
+        left: 30%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        padding: 10%;
+    }
+    /* ---the navbar as a whole */
+    .navbar {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding: 7%;
+        position: fixed;
+        top: 0;
+        background-color: var(--background-color);
+        box-shadow: 0px 4px 8px 2px rgba(225, 225, 225, 0.6);
+    }
+    .logo-container {
+        width: 97%;
+        justify-content: space-between;
+    }
+    .logo-container img {
+        width: 15%;
+    }
+    .logo-container img:nth-child(2) {
+        width: 10%;
+    }
+    /* ---burger menu */
+    .menu { 
+        display: block;
+    }
+}
+
+/* ---ipad */
+@media only screen 
+    and (max-width: 768px) {
+    
+    
+    .navbar-1,
+    .navbar-2
+     {
+        display: none;
+    }
+    /* classes to be toggled (media query)-- */
+    .display {
+        display: block;
+    }
+    .margin-left {
+        margin-left: 77%;
+    }
+    .margin-bottom {
+        margin-bottom: 13%;
+    }
+    .phones {
+        margin-bottom: 12%;
+    }
+    /* end--- */
+
+    .navbar-1 {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        background-color: var(--background-color);
+        height: 100vh;
+        padding: 15%;
+    }
+    .navbar-1 ul {
+        flex-direction: column;
+    }
+    .navbar-1 li {
+        margin: 5% 0;
+    }
+    .navbar-2 {
+        margin-top: 50px;
+    }
+    .navbar-2 .icons {
+        position: absolute;
+        top: 290%;
+        left: 30%;
+        padding: 0;
+        margin: 0;
+        margin-left: -7%;
+        text-align: center;
+        padding: 10%;
+    }
+    /* ---the navbar as a whole */
+    .navbar {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        padding: 7%;
+        position: fixed;
+        top: 0;
+        background-color: var(--background-color);
+        box-shadow: 0px 4px 8px 2px rgba(225, 225, 225, 0.6);
+    }
+    .logo-container {
+        width: 97%;
+        justify-content: space-between;
+    }
+    .logo-container img {
+        width: 10%;
+    }
+    .logo-container img:nth-child(2) {
+        width: 5%;
+    }
+    /* ---burger menu */
+    .menu { 
+        display: block;
     }
 }
