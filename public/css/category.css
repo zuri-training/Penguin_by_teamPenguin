@@ -241,9 +241,7 @@ footer p {
 
 /* ---iphone X  */
 @media only screen 
-    and (device-width: 375px) 
-    and (device-height: 812px) 
-    and (-webkit-device-pixel-ratio: 3) {
+    and (max-width: 375px) {
     
     
     .navbar-1,
@@ -419,9 +417,7 @@ footer p {
 
 /* ---iphone 6,7,8 plus  */
 @media only screen 
-    and (device-width: 414px) 
-    and (device-height: 736px) 
-    and (-webkit-device-pixel-ratio: 3) {
+    and (max-width: 414px) {
     
     
     .navbar-1,
@@ -600,9 +596,7 @@ footer p {
 
 /* ---ipad */
 @media only screen 
-    and (device-width: 768px) 
-    and (device-height: 1024px) 
-    and (-webkit-device-pixel-ratio: 2) {
+    and (max-width: 768px) {
     
     
     .navbar-1,
@@ -781,3 +775,23 @@ footer p {
     }
 }
 
+
+
+
+
+
+
+
+/* ---apple category page */
+
+.hero {
+    width: 100%;
+    padding: 2% 10%;
+}
+.hero input {
+    width: 100%;
+    padding: 1% 0;
+    border-radius: 7px;
+    border: 1px solid var(--color-grey);
+    background: transparent;
+}
