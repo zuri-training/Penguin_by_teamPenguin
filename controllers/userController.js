@@ -11,24 +11,31 @@ const db = client.db('pricecompare')
 
 // Signup New USer
 const addUser = async (req, res) => {
-        const { email, username, password} = await req.body
+        const { email, username, password } = await req.body
     
     // Check if user exist
-       User.findOne({ email: email }, (err, result) => {
-       if (result) 
-            // if user exist, send a message
-           return res.status(200).json({message: "User already Exist"});
-        }) 
+    //    User.findOne({ email:email }, (err, data) => {
+    //    if (data) 
+    //         // if user exist, send a message
+    //        return res.status(200).json({message: "User already Exist"});
+        
+    //     })
+        
+       
         
      try {
-         
+         const result = await db.collection('price').findOne({email:email});
+         if(result){
+             return res.status(200).json({message: "User already Exist"});
+         }
+        
         // if user dont exist, signup user
-            bcrypt.hash(password, saltRounds, function(err, hash) {      
-                const newUser = new User({
+            bcrypt.hash(password, saltRounds, (err, hash) => {      
+                const newUser = {
                     username: username,
                     email: email,
                     password: hash
-                })
+                }
             
                 // save user to DB
                 db.collection('price').insertOne(newUser)
@@ -43,36 +50,35 @@ const addUser = async (req, res) => {
          res.status(500).json({
                        message: `Signup Not successful  ${err.message}`
                     });
-        
        }   
-   
-
 }
 
 // Login User
 const verifyUser = async (req, res) => {
-    const { email, passowrd } = req.body
+    try {
+    const { email, password } = req.body
     // Check if user exist
-    User.findOne({email: email}, (err, result) => {
-        if (result) { 
-            // if user exist check if password match
-            const hash = result.password;
-            bcrypt.compare(passowrd, hash, function(err, doc) {    
-                if(doc) {
-                    //  if password match login users
-                    res.status(200).json({message: "Login Successfully"});
-                } else {
-                    // send error if password do not match
-                    res.status(200).json({message: "Password Not Match"});
-                }
-            });
-        } else {
-            // if user does not exist, send error
-            res.status(404).json({message: "User not found"});
+    const result = await db.collection('price').findOne({email: email});
+    if(result){
+        const hash = result.password;
+        const hashResult = await bcrypt.compare(password, hash);
+        
+        //  if password match login users
+        if(hashResult){
+            return res.status(200).json({message: "Login Successfully"});
         }
-    })
-
+        
+        // send error if password do not match
+        return res.status(200).json({message: "Password Not Match"});
+        }
+        
+        res.status(200).json({message: "User does not exist"});
+        } catch (err) {
+            // if user does not exist, send error
+            res.status(404).json({message: err.message});
+        }
 }
+
 module.exports = {
     addUser,
     verifyUser

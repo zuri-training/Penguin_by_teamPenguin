@@ -16,5 +16,5 @@ const port = process.env.PORT || 8005;
 app.use("/",router)
 
 app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
+    console.log(`Server started on port ${port}`)
 });
