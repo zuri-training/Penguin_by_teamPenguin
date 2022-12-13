@@ -4,46 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penguin</title>
+    <title>Categpries</title>
     <link rel="stylesheet" href="/public/css/category.css">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <link rel="stylesheet" href="/public/css/footer.css">
 </head>
 <body>
     
     <section class="navbar">
         <div class="logo-container">
             <img src="/public/images/category-page/Logo.png" alt="the penguin logo">
+            <img src="/public/images/category-page/menu.svg" alt="" class="menu"    id="menu">
         </div>
-        <div class="navbar-1">
+        <div class="navbar-1"   id="nav1">
             <nav>
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <a href="../Home/home.html">Home</a>
                     </li>
                     <li>
-                        <a href="#" class="active" >Categories</a>
+                        <a href="../Category/Category.html" class="active">Categories</a>
                     </li>
                     <li>
-                        <a href="#">About Us</a>
+                        <a href="../About-Us/About-Us.html">About Us</a>
                     </li>
                     <li>
-                        <a href="#">How To</a>
+                        <a href="../How-To/How-To.html">How To</a>
                     </li>
                 </ul>
             </nav>
         </div>
-        <div class="navbar-2">
+        <div class="navbar-2"   id="nav2">
             <div class="icons">
                 <img src="/public/images/category-page/search-icon.png" alt="a search icon">
                 <img src="/public/images/category-page/profile-icon.svg" alt="a profile icon">
-                <img src="/public/images/category-page/save-icon.svg" alt="a save icon">
+                <img src="/public/images/category-page/Header-Save-Icon.svg" alt="a save icon">
             </div>
         </div>
     </section>
 
+    <header>
+        <h3>Categories</h3>
+    </header>
+
     <section class="category">
-        <div class="heading">
-            <!-- <h3>Categories</h3> -->
-        </div>
         <div class="category-container">
             <div class="--category" id="category-1">
                 <img src="/public/images/category-page/computers.svg" alt=""    class="margin-bottom">
@@ -233,7 +237,7 @@
                     <h3>All Products</h3>
                 </div>
                 <div class="--category hide">
-                    <h3> </h3>
+                    <h3></h3>
                 </div>
             </div>
         </div>
@@ -241,48 +245,63 @@
     
     <section class="bottom-nav">
         <div class="left">
-            <div class="logo-container"></div>
-            <div class="icon-container"></div>
+            <div class="logo-container">
+                <img src="/public/images/category-page/Logo.png" alt="">
+            </div>
+            <div class="icon-container">
+                <img src="/public/images/category-page/Facebook-icon.svg" alt="a facebook-icon">
+                <img src="/public/images/category-page/Instagram-icon.svg" alt="an instagram-icon">
+                <img src="/public/images/category-page/Twitter-icon.svg" alt="a twitter-icon">
+                <img src="/public/images/category-page/LinkedIn-icon.svg" alt="a linkedin-icon">
+            </div>
         </div>
         <div class="right">
             <nav>
                 <h3>Penguin</h3>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Coming soon</li>
+                    <li>Careers</li>
+                    <li>Collaborations</li>
                 </ul>
             </nav>
             <nav>
                 <h3>Learn More</h3>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Getting Started</li>
+                    <li>Safe shopping</li>
+                    <li>Membership</li>
+                    <li>Product Reviews</li>
+                    <li>FAQ</li>
                 </ul>
             </nav>
             <nav>
                 <h3>Partners & Advertisers</h3>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Register your shop</li>
+                    <li>Register your brand</li>
+                    <li>Advertising</li>
+                    <li>Penguin API</li>
                 </ul>
             </nav>
         </div>
     </section>
 
-    <!-- <section class="footer">
+    <section class="footer">
         <footer>
-
+            <div>
+                <p>© 2022, All right reserved.</p>
+            </div>
+            <div>
+                <p>Privacy Policy</p>
+                <p>Terms of Service</p>
+                <p>Cookies Settings</p>
+            </div>
         </footer>
-    </section> -->
+    </section>
 
     <script src="/public/js/script.js"></script>
+    <script src="/public/js/navbar.js"></script>
 </body>
 </html>

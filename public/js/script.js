@@ -21,95 +21,98 @@ let category10 = document.getElementById('category-10')
 let brand10 = document.getElementById('brand-10')
 
 
+
 function showNavOne() {
     brand1.style.display = 'flex';
-    category1.style.height = '26vh'
+    category1.style.height = '32vh'
 }
 function hideNavOne() {
     brand1.style.display = 'none';
-    category1.style.height = '14vh'
+    category1.style.height = '22vh'
 }
 
 function showNavTwo() {
     brand2.style.display = 'flex';
-    category2.style.height = '27vh'
+    category2.style.height = '33vh'
 }
 function hideNavTwo() {
     brand2.style.display = 'none';
-    category2.style.height = '14vh'
+    category2.style.height = '22vh'
 }
 
 function showNavThree() {
     brand3.style.display = 'flex';
-    category3.style.height = '27vh'
+    category3.style.height = '33vh'
 }
 function hideNavThree() {
     brand3.style.display = 'none';
-    category3.style.height = '14vh'
+    category3.style.height = '22vh'
 }
 
 function showNavFour() {
     brand4.style.display = 'flex';
-    category4.style.height = '28vh'
+    category4.style.height = '37vh'
 }
 function hideNavFour() {
     brand4.style.display = 'none';
-    category4.style.height = '14vh'
+    category4.style.height = '22vh'
 }
 
 function showNavFive() {
     brand5.style.display = 'flex';
-    category5.style.height = '30vh'
+    category5.style.height = '36vh'
 }
 function hideNavFive() {
     brand5.style.display = 'none';
-    category5.style.height = '14vh'
+    category5.style.height = '22vh'
 }
 
 function showNavSix() {
     brand6.style.display = 'flex';
-    category6.style.height = '27vh'
+    category6.style.height = '33vh'
 }
 function hideNavSix() {
     brand6.style.display = 'none';
-    category6.style.height = '14vh'
+    category6.style.height = '22vh'
 }
 
 function showNavSeven() {
     brand7.style.display = 'flex';
-    category7.style.height = '23vh'
+    category7.style.height = '29vh'
 }
 function hideNavSeven() {
     brand7.style.display = 'none';
-    category7.style.height = '14vh'
+    category7.style.height = '22vh'
 }
 
 function showNavEight() {
     brand8.style.display = 'flex';
-    category8.style.height = '29vh'
+    category8.style.height = '35vh'
 }
 function hideNavEight() {
     brand8.style.display = 'none';
-    category8.style.height = '14vh'
+    category8.style.height = '22vh'
 }
 
 function showNavNine() {
     brand9.style.display = 'flex';
-    category9.style.height = '29vh'
+    category9.style.height = '35vh'
 }
 function hideNavNine() {
     brand9.style.display = 'none';
-    category9.style.height = '14vh'
+    category9.style.height = '22vh'
 }
 
 function showNavTen() {
     brand10.style.display = 'flex';
-    category10.style.height = '25vh'
+    category10.style.height = '30vh'
 }
 function hideNavTen() {
     brand10.style.display = 'none';
-    category10.style.height = '14vh'
+    category10.style.height = '22vh'
 }
+
+
 
 category1.addEventListener('mouseover', showNavOne)
 category1.addEventListener('mouseout', hideNavOne)
