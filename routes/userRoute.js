@@ -1,12 +1,15 @@
 const express = require('express');
-const { addUser, verifyUser } = require('../controllers/userControllers');
+const { addUser, verifyUser } = require('../controllers/userController');
 
 const router = express.Router();
 
 
+// Signup Routes
+// router.route("/signup")
+// .post(addUser);
 
-router.route("/signup").post(addUser);
-router.route("/login").post(verifyUser);
+// Login routes
+// router.route("/login").post(verifyUser);
 
 
 

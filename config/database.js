@@ -1,19 +1,8 @@
-const mongoose = require('mongoose')
-require('dotenv').config() 
-const { MONGO_URI } = process.env
-const { MongoClient } = require('mongodb')
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
+const url = "mongodb://localhost:27017/penguineDB";
 
-const connectDB =  async () => {
-  try {
-  const client = new MongoClient(MONGO_URI)
-  await client.connect()
-  console.log('MongoDB Connected')
+mongoose.connect(url, { useNewUrlParser: true });
 
-  } catch (error) {
-    console.log(error.message)
-    console.log('connection failed')
-  }
-}
+module.exports = mongoose;
 
- 
-module.exports = connectDB;
