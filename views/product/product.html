@@ -10,6 +10,8 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../public/css/product.css">
+    <link rel="stylesheet" href="../../public/css/navbar.css">
+    <link rel="stylesheet" href="../../public/css/footer.css">
 </head>
 
 
@@ -17,21 +19,37 @@
 
 <body>
     <div class="wrapper">
-        <nav class="nav">
-            <img src="../../public/images/signIn-page/Logo.png" alt="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">How-to</a></li>
-
-            </ul>
-            <div class="icon">
-                <img src="../../public/images/category-page/searchbar-search-icon.svg" alt="">
-                <img src="../../public/images/category-page/profile-icon.svg" alt="">
-                <img src="../../public/images/signIn-page/save-icon.png" alt="">
+        <section class="navbar">
+            <div class="logo-container">
+                <img src="/public/images/category-page/Logo.png" alt="the penguin logo">
+                <img src="/public/images/category-page/menu.svg" alt="" class="menu" id="menu">
             </div>
-        </nav>
+            <div class="navbar-1" id="nav1">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/categories">Categories</a>
+                        </li>
+                        <li>
+                            <a href="/about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/howto">How To</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navbar-2" id="nav2">
+                <div class="icons">
+                    <img src="/public/images/category-page/search-icon.png" alt="a search icon">
+                    <img src="/public/images/category-page/profile-icon.svg" alt="a profile icon">
+                    <img src="/public/images/category-page/Header-Save-Icon.svg" alt="a save icon">
+                </div>
+            </div>
+        </section>
 
 
         <!-- PRODUCTS -->
@@ -122,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- card end -first row->
+                <!-- card end -first row -->
 
 
                     <!-- CARD START SECOND ROW -->
@@ -203,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- CARD END SECOND ROW->
+                <!-- CARD END SECOND ROW -->
 
                     <!-- CARD START THIRD ROW -->
                 <div class="card">
@@ -283,7 +301,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- CARD END THIRD ROW->
+                <!-- CARD END THIRD ROW -->
 
                         <!-- CARD START FORTH ROW -->
                 <div class="card">
@@ -363,10 +381,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- CARD END FORTH ROW->
+                <!-- CARD END FORTH ROW -->
 
 
-                        <!-- CARD START FIFTH ROW -->
+                         <!-- CARD START FIFTH ROW  -->
                 <div class="card">
                     <div class="img">
                         <img src="../../public/images/category-page/galaxy-note.png" alt="laptop image">
@@ -444,4 +462,67 @@
                         </div>
                     </div>
                 </div>
-                <!-- CARD END FIFTH ROW->
+                <!-- CARD END FIFTH ROW-->
+            </div>
+        </section>
+    </div>
+    <section class="bottom-nav">
+        <div class="left">
+            <div class="logo-container">
+                <img src="/public/images/category-page/Logo.png" alt="">
+            </div>
+            <div class="icon-container">
+                <img src="/public/images/category-page/Facebook-icon.svg" alt="a facebook-icon">
+                <img src="/public/images/category-page/Instagram-icon.svg" alt="an instagram-icon">
+                <img src="/public/images/category-page/Twitter-icon.svg" alt="a twitter-icon">
+                <img src="/public/images/category-page/LinkedIn-icon.svg" alt="a linkedin-icon">
+            </div>
+        </div>
+        <div class="right">
+            <nav>
+                <h3>Penguin</h3>
+                <ul>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Coming soon</li>
+                    <li>Careers</li>
+                    <li>Collaborations</li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Learn More</h3>
+                <ul>
+                    <li>Getting Started</li>
+                    <li>Safe shopping</li>
+                    <li>Membership</li>
+                    <li>Product Reviews</li>
+                    <li>FAQ</li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Partners & Advertisers</h3>
+                <ul>
+                    <li>Register your shop</li>
+                    <li>Register your brand</li>
+                    <li>Advertising</li>
+                    <li>Penguin API</li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <div>
+                <p>© 2022, All right reserved.</p>
+            </div>
+            <div>
+                <p>Privacy Policy</p>
+                <p>Terms of Service</p>
+                <p>Cookies Settings</p>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>
