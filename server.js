@@ -62,7 +62,7 @@ app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
   );
 
-  app.get('/auth/google/home', 
+  app.get('/auth/google/', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
@@ -79,6 +79,14 @@ app.get("/login", (req, res) => {
 
 app.get("/categories", (req, res) => {
   res.sendFile(__dirname + "/views/Category/Category.html");
+});
+
+app.get("/products", (req, res) => {
+  res.sendFile(__dirname + "/views/product/product.html");
+});
+
+app.get("/search", (req, res) => {
+  res.sendFile(__dirname + "/views/search/search.html");
 });
   
 app.post("/signup", (req, res) => {
