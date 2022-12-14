@@ -83,8 +83,8 @@ a {
     display: flex;
     justify-content: space-between;
 }
-.search,
 .save,
+.search,
 .profile {
     width: 17%;
     cursor: pointer;
@@ -249,7 +249,7 @@ footer p {
     
     .navbar-1,
     .navbar-2
-     {
+    {
         display: none;
     }
     /* classes to be toggled (media query)-- */
@@ -317,7 +317,7 @@ footer p {
 
 
     header
-     {
+    {
         margin-top: 35%;
     }
     header {
@@ -425,7 +425,7 @@ footer p {
         width: 100000px;
         display: none;
     }
-     */
+    */
 }
 
 /* ---iphone 6,7,8 plus  */
@@ -435,7 +435,7 @@ footer p {
     
     .navbar-1,
     .navbar-2
-     {
+    {
         display: none;
     }
     /* classes to be toggled (media query)-- */
@@ -503,7 +503,7 @@ footer p {
 
 
     header
-     {
+    {
         margin-top: 35%;
     }
     header {
@@ -614,7 +614,7 @@ footer p {
     
     .navbar-1,
     .navbar-2
-     {
+    {
         display: none;
     }
     /* classes to be toggled (media query)-- */
@@ -688,7 +688,7 @@ footer p {
 
 
     header
-     {
+    {
         margin-top: 35%;
     }
     header {
@@ -871,7 +871,7 @@ footer p {
 }
 .filter-heading h3,
 .categories-nav h3
- {
+{
     font-size: 1rem;
     color: var(--primary-color);
     position: relative;
