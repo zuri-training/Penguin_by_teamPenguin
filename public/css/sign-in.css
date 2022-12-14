@@ -116,10 +116,18 @@ input:focus {
   padding-right: 3px;
 
 }
-.google button {
+.google a {
   border: none;
   font-size: 12px;
   background-color: inherit;
+  color: black;
+}
+.google a:hover {
+  background-color: #FEFAEC;
+}
+.notification {
+  color: red;
+  font-size: 12px;
 }
 @media  screen and (max-width: 800px) {
   .container {
