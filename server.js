@@ -8,6 +8,8 @@ const { User } = require("./models/userModel");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.use(
   session({
     secret: "This is a secret.",
@@ -50,19 +52,15 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-app.get("/" || "/home", (req, res) => {
-  if (req.isAuthenticated()) {
+app.get("/", (req, res) => {
     res.sendFile(__dirname + "/views/Home/home.html");
-  } else {
-    res.redirect("/login");
-  }
 });
 
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
   );
 
-  app.get('/auth/google/', 
+  app.get('/', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
@@ -70,11 +68,11 @@ app.get('/auth/google',
   });
 
 app.get("/signup", (req, res) => {
-  res.sendFile(__dirname + "/views/Sign-Up/SignUp.html");
+  res.render("Sign-Up/SignUp", {error: " "});
 });
 
 app.get("/login", (req, res) => {
-  res.sendFile(__dirname + "/views/Sign-in/SignIn.html");
+  res.render("Sign-in/SignIn", {error: " "});
 });
 
 app.get("/categories", (req, res) => {
@@ -88,34 +86,53 @@ app.get("/products", (req, res) => {
 app.get("/search", (req, res) => {
   res.sendFile(__dirname + "/views/search/search.html");
 });
+app.post("/like",(req, res)=> {
+  if (req.isAuthenticated()) {
+    res.sendFile(__dirname + "/views/How-To/How-To.html");
+  } else {
+    res.redirect("/login");
+  }
+})
   
 app.post("/signup", (req, res) => {
   const { name, email, pwd, rpwd } = req.body;
   if (name === "" || email === "" || pwd === "" || rpwd === "") {
-    return res.status(200).json({ message: "empty Fields" });
+    res.render("Sign-Up/SignUp", {error: "Empty Field(s)"});
   } else {
     User.findOne({email:email}, (err,result) => {
       if (result) {
-        return res.status(200).json({ message: "User Exist" });
+       res.render("Sign-Up/SignUp", {error: "User Already Exist"});
       } else {      
         if (pwd === rpwd) {
           User.register( { username: email, fullName: name, email: email }, pwd );
           res.redirect("/login");
         } else {
-          return res.status(201).json({ message: "Password does not match" });
+         res.render("Sign-Up/SignUp", {error: "Password does not match"});
         }
       }
     })
   }
 });
 
-app.post(
-  "/login",
-  passport.authenticate("local", { failureRedirect: "/" }),
-  function (req, res) {
-    res.redirect("/");
-  }
-);
+app.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) {
+      console.log(err.message);
+      return next(err); // will generate a 500 error
+    }
+    // Generate a JSON response reflecting authentication status
+    if (! user) {
+      return res.render("Sign-in/SignIn", {error: "User not found"});
+    }
+    req.login(user, function(err){
+      if(err){
+        console.log(err.message);
+        return next(err);
+      }
+      return res.redirect("/");        
+    });
+  })(req, res, next);
+});
 
 app.listen(3000, () => {
   console.log(`Server started on port 3000`);
