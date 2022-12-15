@@ -60,7 +60,7 @@ app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
   );
 
-  app.get('/', 
+  app.get('/auth/google/secret',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
@@ -122,7 +122,7 @@ app.post('/login', function(req, res, next) {
     }
     // Generate a JSON response reflecting authentication status
     if (! user) {
-      return res.render("Sign-in/SignIn", {error: "User not found"});
+      return res.render("Sign-in/SignIn", {error: "Email/Password not correct"});
     }
     req.login(user, function(err){
       if(err){

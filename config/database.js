@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-const url = "mongodb://localhost:27017/penguineDB";
+const url = "mongodb+srv://admin-penguine:admin-123@cluster0.kxvuors.mongodb.net/penguineDB";
 
 mongoose.connect(url, { useNewUrlParser: true });
 
