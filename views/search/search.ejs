@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin</title>
+    <link rel="stylesheet" href="/public/css/category.css">
+</head>
+<body>
+    <style>
+        figure .imap {
+        width: 120px;
+        height: 120px;
+    }
+    </style>
+    
+    <section class="navbar">
+        <div class="logo-container">
+            <img src="/public/images/category-page/Logo.png" alt="the penguin logo">
+            <img src="/public/images/category-page/menu.svg" alt="" class="menu"    id="menu">
+        </div>
+        <div class="navbar-1"   id="nav1">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active" >Categories</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">How To</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-2"   id="nav2">
+            <div class="icons">
+                <img src="/public/images/category-page/searchResult.svg" alt="a search icon"    class="search searchResult">
+                <img src="/public/images/category-page/profile-icon.svg" alt="a profile icon"   class="profile">
+                <img src="/public/images/category-page/Header-Save-Icon.svg" alt="a save icon"  class="save">
+            </div>
+        </div>
+    </section>
+
+    <section class="hero    searchResultHero">
+        <div>
+            <form method="get" action="/search/product-search">
+                <input type="text" name="search" id="searchBar" placeholder="Start typing a product to search">
+                <img src="/public/images/category-page/searchbar-search-icon.svg" alt=""    class="search-bar-icon">
+            </form>
+           
+        </div>
+        <div>
+            <h3>Search</h3>
+            <h3>Laptop</h3>
+            <h3> </h3>
+        </div>
+    </section>
+
+    <section class="body">
+        <section class="side-nav    searchSideNav">
+            <div class="filter">
+                <div class="filter-heading">
+                    <h3>Filters</h3>
+                    <img src="/public/images/category-page/exit.svg" alt="" class="exit">
+                </div>
+                <div class="filter">
+                    <ul>
+                        <li class="price">Price</li>
+                        <li class="brand">Brand</li>
+                        <li class="ram">Ram</li>
+                        <li class="processor">Processor</li>
+                        <li class="type">Type</li>
+                        <li class="rating">Rating</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="categories-nav">
+                <h3>Categories</h3>
+                <ul>
+                    <% categories.forEach(function(c) { %>
+                        <li><a href="<%= c.title %>"><%= c.title %> </a></li>
+                    <% }) %>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <section class="products">
+            <div class="product-container">
+
+                <!-- start of first row -->
+                <% products.forEach(function(p) { %>
+                <div class="product">
+                    <figure>
+                        <img class="imap" src="<%= p.image %>" alt="">
+                        <figcaption><%= p.title %></figcaption>
+                    </figure>
+                    <div    class="details-container">
+                        <p>starting from</p>
+                        <h3><%= p.price %></h3>
+                        <button type="button">Compare prices</button>
+                        <div    class="product-rating-container">
+                            <img src="/public/images/category-page/4stars-rating.svg" alt="">
+                            <a class="" href="/product-save/<%= p._id %>">
+                                <%if(p.isSave) { %>
+                                    <img src="/public/images/category-page/saved-icon.svg" alt=""   class="--saved-extra favorite">
+                               <% } else { %>
+                                <img src="/public/images/category-page/save-icon.svg" alt=""    class="--saved-reduction favorite">
+                                <% } %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+
+                <!-- start of second row -->
+            </div>
+        </section>
+    </section>
+
+    <section class="pagination">
+        <div>
+            <img src="/public/images/category-page/arrow-left-pagination.svg" alt="">
+            <p>1</p>
+            <p  class="two">2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+            <p>...</p>
+            <p>150</p>
+            <img src="/public/images/category-page/arrow-right-pagination.svg" alt="">
+        </div>
+    </section>
+    
+    <section class="bottom-nav">
+        <div class="left">
+            <div class="logo-container">
+                <img src="/public/images/category-page/Logo.png" alt="">
+            </div>
+            <div class="icon-container">
+                <img src="/public/images/category-page/Facebook-icon.svg" alt="a facebook-icon">
+                <img src="/public/images/category-page/Instagram-icon.svg" alt="an instagram-icon">
+                <img src="/public/images/category-page/Twitter-icon.svg" alt="a twitter-icon">
+                <img src="/public/images/category-page/LinkedIn-icon.svg" alt="a linkedin-icon">
+            </div>
+        </div>
+        <div class="right">
+            <nav>
+                <h3>Penguin</h3>
+                <ul>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Coming soon</li>
+                    <li>Careers</li>
+                    <li>Collaborations</li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Learn More</h3>
+                <ul>
+                    <li>Getting Started</li>
+                    <li>Safe shopping</li>
+                    <li>Membership</li>
+                    <li>Product Reviews</li>
+                    <li>FAQ</li>
+                </ul>
+            </nav>
+            <nav>
+                <h3>Partners & Advertisers</h3>
+                <ul>
+                    <li>Register your shop</li>
+                    <li>Register your brand</li>
+                    <li>Advertising</li>
+                    <li>Penguin API</li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <section class="footer">
+        <footer>
+            <div>
+                <p>© 2022, All right reserved.</p>
+            </div>
+            <div>
+                <p>Privacy Policy</p>
+                <p>Terms of Service</p>
+                <p>Cookies Settings</p>
+            </div>
+        </footer>
+    </section>
+
+    <script src="/public/js/script.js"></script>
+</body>
+</html>

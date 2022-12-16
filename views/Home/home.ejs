@@ -21,6 +21,11 @@
     section.bottom-nav .right ul li {
         margin-left: -28px;
     }
+
+    figure .imap {
+        width: 120px;
+        height: 120px;
+    }
 </style>
 <body>
     <div class="wrapper">
@@ -49,7 +54,7 @@
             </div>
             <div class="navbar-2"   id="nav2">
                 <div class="icons">
-                    <a href="/search"><img src="/public/images/category-page/search-icon.png" alt="a search icon"></a>
+                    <a href="/page/search"><img src="/public/images/category-page/search-icon.png" alt="a search icon"></a>
                     <img src="/public/images/category-page/profile-icon.svg" alt="a profile icon">
                     <img src="/public/images/category-page/Header-Save-Icon.svg" alt="a save icon">
                 </div>
@@ -86,63 +91,32 @@
                     <button><i class="fa fa-chevron-left"></i></button>
                     <button><i class="fa fa-chevron-right"></i></button>
                 </div>
-                <div class="product">
-                    <figure>
-                        <img src="/public/images/category-page/desktop1.svg" alt="">
-                        <figcaption>Apple iMac Retina 4K|Core i7| 3.8GHz|8GB 512GB|Radeon Pro 5500|XT 27"</figcaption>
-                        <p>starting from</p>
-                        <h3>₦500,000</h3>
-                        <button type="button">Compare prices</button>
-                        <div>
-                            <img src="/public/images/category-page/4stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/save-icon.svg" alt=""    class="--saved-reduction favorite">
-                        </div>
-                    </figure>
-                </div>
+                <% products.forEach(function(p) { %>
+                    <div class="product">
+                        
+                        <figure>
+                            <img class="imap" src="<%= p.image %>" alt="">
+                            <figcaption><%= p.title %></figcaption>
+                            <p>starting from</p>
+                            <h3><%= p.price %></h3>
+                            <button type="button">Compare prices</button>
+                            
+                            <div>
+                                <img src="/public/images/category-page/4stars-rating.svg" alt="">
+                                <a class="" href="/product-save/<%= p._id %>">
+                                    <%if(p.isSave) { %>
+                                        <img src="/public/images/category-page/saved-icon.svg" alt=""   class="--saved-extra favorite">
+                                   <% } else { %>
+                                    <img src="/public/images/category-page/save-icon.svg" alt=""    class="--saved-reduction favorite">
+                                    <% }%>
+                                </a>
+                            </div>
+                        </figure>
+                     
+                    </div>
+                <% }) %>
                 <!-- card start -->
-                <div class="product">
-                    <figure>
-                        <img src="/public/images/category-page/desktop1.svg" alt="">
-                        <figcaption>Apple iMac Retina 4K|Core i7|3.8GHz|8GB 512GB|Radeon Pro 5500|XT 27"</figcaption>
-                        <p>starting from</p>
-                        <h3>₦700,000</h3>
-                        <button type="button">Compare prices</button>
-                        <div>
-                            <img src="/public/images/category-page/4stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/saved-icon.svg" alt=""   class="--saved-extra favorite">
-                        </div>
-                    </figure>
-                </div>
-                <!-- card end -->
-                <!-- card start -->
-                <div class="product">
-                    <figure>
-                        <img src="/public/images/category-page/laptop1.svg" alt=""  class="searchResultProduct">
-                        <figcaption>ASUS VivoBook 15 X515JA-EJ2133W|15.6"|Intel Core i3|1.2 GHz|8 GB|RAM|256 GB SSD</figcaption>
-                        <p>starting from</p>
-                        <h3>₦250,000</h3>
-                        <button type="button">Compare prices</button>
-                        <div>
-                            <img src="/public/images/category-page/5stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/save-icon.svg" alt=""  class="--saved-reduction favorite" >
-                        </div>
-                    </figure>
-                </div>
-                <!-- card end -->
-                <!-- card start -->
-                <div class="product">
-                    <figure>
-                        <img src="/public/images/category-page/laptop1.svg" alt=""  class="searchResultProduct">
-                        <figcaption>ASUS VivoBook 15 X515JA-EJ2133W|15.6"|Intel Core i3|1.2 GHz|8 GB|RAM|256 GB SSD</figcaption>
-                        <p>starting from</p>
-                        <h3>₦250,000</h3>
-                        <button type="button">Compare prices</button>
-                        <div>
-                            <img src="/public/images/category-page/5stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/save-icon.svg" alt=""  class="--saved-reduction favorite" >
-                        </div>
-                    </figure>
-                </div>
+               
                 <!-- card end -->
                 <!-- card start -->
                     <div class="card center mobile">
@@ -157,85 +131,14 @@
         <h2 class="cat-text">Browse by category</h2>
         <section class="category">
             <div class="category-container">
-                <div class="--category" id="category-1">
-                    <img src="/public/images/category-page/computers.svg" alt=""    class="margin-bottom">
-                    <h3>Computers</h3>
-                    <div class="brands" id="brand-1">
-                        <div>
-                            <p>Apple</p>
-                            <p>Hp</p>
-                            <p>Dell</p>
-                        </div>
-                        <div>
-                            <p>Lenovo</p>
-                            <p>Acer</p>
-                            <p>Samsung</p>
-                        </div>
-                        <div>
-                            <p>Razer</p>
-                            <p></p>
-                            <p></p>
-                        </div>
-                        
+                <% categories.forEach(function(c) { %>
+                    <div class="--category" id="category-1">
+                        <img src="/public/images/category-page/computers.svg" alt="" class="margin-bottom">
+                        <h3>
+                            <a href="<%= c.title %>"><%= c.title %> </a>
+                        </h3>
                     </div>
-                </div>
-                <div class="--category" id="category-2">
-                    <img src="/public/images/category-page/mobile-phones.svg" alt=""    class="phones">
-                    <h3>Mobile Phones</h3>
-                    <div class="brands" id="brand-2">
-                        <div>
-                            <p>IPhone</p>
-                            <p>Blackview</p>
-                            <p>Oppo</p>
-                        </div>
-                        <div>
-                            <p>Samsung</p>
-                            <p>Vivo</p>
-                            <p>Samsung</p>
-                        </div>
-                        <div>
-                            <p>Xiaomi</p>
-                            <p>Huawei</p>
-                            <p>Infinix</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="--category" id="category-3">
-                    <img src="/public/images/category-page/computer-accessories.svg" alt="" class="margin-bottom">
-                    <h3>Computer Accessories</h3>
-                    <div class="brands" id="brand-3">
-                        <div>
-                            <p>Keyboard</p>
-                            <p>Webcams</p>
-                        </div>
-                        <div>
-                            <p>Printers</p>
-                            <p>Mouse pads</p>
-                        </div>
-                        <div>
-                            <p>Scanners</p>
-                            <p>Laptop stands</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="--category" id="category-4">
-                    <img src="/public/images/category-page/mobile-phone-accessories.svg" alt="" class="phones">
-                    <h3>Mobile Phone Accessories</h3>
-                    <div class="brands" id="brand-4">
-                        <div>
-                            <p>Powerbanks</p>
-                            <p>Selfie sticks</p>
-                        </div>
-                        <div>
-                            <p>Headphones</p>
-                            <p>Bluetooth <br> speakers</p>
-                        </div>
-                        <div>
-                            <p>Smartwatches</p>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
+                <% }); %>
             </div>
             <div class="category-container  container-2"    id="category">
                 <div class="category-container">

@@ -22,6 +22,19 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Get Category Model 
+let Category = require('./models/category');
+
+// Get all categories to pass to header.ejs
+Category.find(function (err, categories) {
+    if (err) {
+        console.log(err);
+    } else {
+        app.locals.categories = categories;
+    }
+});
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -38,23 +51,24 @@ passport.deserializeUser(function(id, done) {
   })
 });
 
-passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/",
-    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
+// passport.use(new GoogleStrategy({
+//     clientID: process.env.CLIENT_ID,
+//     clientSecret: process.env.CLIENT_SECRET,
+//     callbackURL: "http://localhost:3000/auth/google/",
+//     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     console.log(profile);
+//     User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/views/Home/home.html");
-});
+
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/views/Home/home.html");
+// });
 
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
@@ -79,13 +93,14 @@ app.get("/categories", (req, res) => {
   res.sendFile(__dirname + "/views/Category/Category.html");
 });
 
-app.get("/products", (req, res) => {
-  res.sendFile(__dirname + "/views/product/product.html");
-});
+// app.get("/products", (req, res) => {
+//   res.sendFile(__dirname + "/views/product/product.html");
+// });
 
-app.get("/search", (req, res) => {
-  res.sendFile(__dirname + "/views/search/search.html");
-});
+// app.get("/search", (req, res) => {
+//   res.sendFile(__dirname + "/views/search/search.html");
+// });
+
 app.post("/like",(req, res)=> {
   if (req.isAuthenticated()) {
     res.sendFile(__dirname + "/views/How-To/How-To.html");
@@ -133,6 +148,12 @@ app.post('/login', function(req, res, next) {
     });
   })(req, res, next);
 });
+
+//routes
+const productRoutes = require("./routes/products");
+
+//product routes
+app.use("/", productRoutes);
 
 app.listen(3000, () => {
   console.log(`Server started on port 3000`);
