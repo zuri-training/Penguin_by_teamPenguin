@@ -81,7 +81,7 @@
 
         <h2>Best Deals</h2>
         <section class="sec">
-            <div class="products">
+            <div class="product-cards">
                 <div class="prev-next-btn">
                     <button><i class="fa fa-chevron-left"></i></button>
                     <button><i class="fa fa-chevron-right"></i></button>
@@ -95,7 +95,7 @@
                         <button type="button">Compare prices</button>
                         <div>
                             <img src="/public/images/category-page/4stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/save-icon.svg" alt=""    class="--saved-reduction favorite">
+                            <img src="/public/images/category-page/save-icon.svg" alt=""    class="--saved-reduction favorite" id="1">
                         </div>
                     </figure>
                 </div>
@@ -109,7 +109,7 @@
                         <button type="button">Compare prices</button>
                         <div>
                             <img src="/public/images/category-page/4stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/saved-icon.svg" alt=""   class="--saved-extra favorite">
+                            <img src="/public/images/category-page/save-icon.svg" alt=""   class="--saved-extra favorite" id="2">
                         </div>
                     </figure>
                 </div>
@@ -124,7 +124,7 @@
                         <button type="button">Compare prices</button>
                         <div>
                             <img src="/public/images/category-page/5stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/save-icon.svg" alt=""  class="--saved-reduction favorite" >
+                            <img src="/public/images/category-page/save-icon.svg" alt=""  class="--saved-reduction favorite" id="3">
                         </div>
                     </figure>
                 </div>
@@ -139,14 +139,27 @@
                         <button type="button">Compare prices</button>
                         <div>
                             <img src="/public/images/category-page/5stars-rating.svg" alt="">
-                            <img src="/public/images/category-page/save-icon.svg" alt=""  class="--saved-reduction favorite" >
+                            <img src="/public/images/category-page/save-icon.svg" alt=""  class="--saved-reduction favorite" id="4" >
                         </div>
                     </figure>
                 </div>
                 <!-- card end -->
                 <!-- card start -->
+                <div class="product">
+                    <figure>
+                        <img src="/public/images/category-page/laptop3.svg" alt="">
+                        <figcaption>ASUS 15.6 ROG STRIX G512LI-SB71- 2.g GHz...</figcaption>
+                        <p>starting from</p>
+                        <h3>₦400,000</h3>
+                        <button type="button">Compare prices</button>
+                        <div>
+                            <img src="/public/images/category-page/4stars-rating.svg" alt="">
+                            <img src="/public/images/category-page/saved-icon.svg" alt=""   class="--saved-extra favorite" id="5">
+                        </div>
+                    </figure>
+                </div>
                     <div class="card center mobile">
-                        <p>Browse all deals</p><br>
+                        <a href="/products"><p>Browse all deals</p></a><br>
                         <img src="../../public/images/home-page/browse-by-category/right-arrow.svg" alt="">
                     </div>
                 <!-- card end -->
@@ -367,13 +380,61 @@
         <!-- <script src="/public/js/script.js"></script> -->
         <script src="/public/js/navbar.js"></script>
         <script>
+            // Saved Items Shows
             const favourites = document.querySelectorAll(".favorite");
+            $(document).ready(
+                    $.get("/getfav", function(data,status) {
+                        if (data === "noauth") {
+                            // leave empty
+                        } else {
+                            dataArray = data.favourite;
+                            favourites.forEach(favourite => {
+                                const id = Number(favourite.id);
+                                const img = favourite.src;
+                                const imgArray = img.split("/");
+                                const imgLastPart = imgArray[imgArray.length - 1];
+                                if (dataArray.includes(id)) {
+                                    imgArray.pop();
+                                    const src = imgArray.join("/");
+                                    favourite.src = src + "/saved-icon.svg"; 
+                                }
+                            });
+                        }
+                    })
+            );
+
+            // save favourite
             favourites.forEach(favourite => {
                 favourite.addEventListener("click",() => {
                     const img = favourite.src;
                     const imgArray = img.split("/");
                     const imgLastPart = imgArray[imgArray.length -1 ];
+                    const favoriteId = favourite.id;
+                    let save = '';
                     if (imgLastPart === "save-icon.svg") {
+                        save = "save";
+                    } else {
+                        save = "unsave";
+                    }
+                    $.ajax({
+                        url: "/favourite",
+                        method: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify({id: favoriteId, save:save}),
+                        success: function(result) {
+                            if (result === "login") {
+                                const link = location.href;
+                                const linkArray = link.split("/");
+                                const linkLast = linkArray[linkArray.length - 1];
+                                if (linkLast === "") {
+                                    location.assign(link + "login");
+                                } else {
+                                    linkArray.pop();
+                                    const newLink = linkArray.join("/");
+                                    location.assign(newLink + "/login");
+                                }
+                            } else {
+                                if (imgLastPart === "save-icon.svg") {
                         imgArray.pop();
                         const src = imgArray.join("/");
                         favourite.src = src + "/saved-icon.svg";
@@ -382,6 +443,9 @@
                         const src = imgArray.join("/");
                         favourite.src = src + "/save-icon.svg";
                     }
+                            }
+                        }
+                    })
                 })
             })
         </script>

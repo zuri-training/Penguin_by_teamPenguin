@@ -6,11 +6,15 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
    fullName: {
-    type: String
+    type: String,
+    required: true
    },
    
    email: {
     type: String
+   },
+   googleId: {
+      type: String
    },
    date: {
       type: Date,
@@ -18,9 +22,19 @@ const userSchema = new Schema({
    }
 })
 
-userSchema.plugin(passportLocalMongoose);
+const favouriteSchema = new Schema({
+   username: {
+      type: String
+   },
+   favourite: {
+      type: Array
+   }
+})
+
 userSchema.plugin(findOrCreate);
+userSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', userSchema);
+const Favourite = mongoose.model('Favourite', favouriteSchema);
 
-module.exports = {User}
+module.exports = {User, Favourite}

@@ -4,7 +4,7 @@ const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const connectEnsureLogin = require('connect-ensure-login');
-const { User } = require("./models/userModel");
+const { User, Favourite } = require("./models/userModel");
 
 const app = express();
 
@@ -46,9 +46,23 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) {
     console.log(profile);
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
+    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    //   return cb(err, user);
+    // });
+    User.findOne({
+      fullName: profile.displayName 
+  }, function(err, user) {
+      if (err) {
+          return cb(err);
+      }
+      //No user was found... so create a new user with values from Facebook (all the profile. stuff)
+      if (!user) {
+        User.register( { username: profile.displayName + "@gmail.com", fullName: profile.displayName, email: profile.displayName + "@gmail.com", googleId: profile.id }, profile.id );
+      } else {
+          //found user. Return
+          return cb(err, user);
+      }
+  });
   }
 ));
 
@@ -60,7 +74,7 @@ app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
   );
 
-  app.get('/auth/google/secret',
+  app.get('/auth/google/',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
@@ -86,11 +100,50 @@ app.get("/products", (req, res) => {
 app.get("/search", (req, res) => {
   res.sendFile(__dirname + "/views/search/search.html");
 });
-app.post("/like",(req, res)=> {
+
+app.get("/getfav", (req, res) => {
   if (req.isAuthenticated()) {
-    res.sendFile(__dirname + "/views/How-To/How-To.html");
+    Favourite.findOne({username: req.user.username}, (err, data) => {
+      res.json({favourite: data.favourite});
+    });   
   } else {
-    res.redirect("/login");
+    res.send("noauth");
+  }
+});
+
+app.post("/favourite",(req, res)=> {
+  if (req.isAuthenticated()) {
+    const id = Number(req.body.id);
+    const save = req.body.save;
+    const username = req.user.username;
+    if (save === "save") {  
+      Favourite.findOne({username: username}, (err, result) => {
+        if (!result) {
+          Favourite.create({username: username,favourite: [id]});
+        } else {
+          const fav = result.favourite;
+          Favourite.deleteOne({username: username}, (err, done) => {
+            if (done.acknowledged) {
+              Favourite.create({username: username,favourite: [...fav,id]});   
+            }
+          });
+        }
+      })
+      res.send("done");
+    } else {
+      Favourite.findOne({username: username}, (err, result) => {
+        const fav = result.favourite;
+        const newFav = fav.filter((item) => item != id);
+        Favourite.deleteOne({username: username}, (err, done) => {
+          if (done.acknowledged) {
+            Favourite.create({username: username,favourite: newFav});   
+          }
+        });
+      });
+    res.send("deleted");
+    }
+  } else {
+    res.send("login"); 
   }
 })
   
