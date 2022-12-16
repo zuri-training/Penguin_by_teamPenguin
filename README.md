@@ -15,11 +15,12 @@ Comment under product/price
 Ability to share on social media and send by email
 Link to the purchase page
 
+## Live Preview
 
+- [Penguine Tech](https://penguintech.site)
 
 ## Features
 
-- Light/dark mode toggle
 - Live previews
 - Fullscreen mode
 - Cross platform
@@ -36,11 +37,26 @@ Link to the purchase page
 
 ## Authors
 
+### Developers
 - [@codextra](https://github.com/Freecodextra)
 - [@Estella29](https://github.com/Estella29)
 - [@MrOgunga](https://github.com/MrOgunga)
 - [@tunny17](https://github.com/tunny17)
+- [@henry](https://github.com/tunny17)
+- [@ayodeji](https://github.com/tunny17)
 
+### Product Designers
+
+- [Adebiyi Peace]()
+- [Abdulkabir Adebare]()
+- [Bello Sururoh]()
+- [Fashola Latifa]()
+- [Ogbaji-Pat Ephraim]()
+- [Olalekan Mustapha]()
+- [Omokhojie Gabriel]()
+- [Oyeniran Bisola]()
+- [James Silas]()
+- [Miracle Arinze]()
 
 ## Contributing
 
