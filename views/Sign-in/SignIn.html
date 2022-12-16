@@ -18,20 +18,20 @@
         </div>
         <div class="navbar-1"   id="nav1">
             <nav>
-                <ul>
-                    <li>
-                        <a href="../Home/home.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="../Category/Category.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="../About-Us/About-Us.html">About Us</a>
-                    </li>
-                    <li>
-                        <a href="../How-To/How-To.html">How To</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/categories">Categories</a>
+                        </li>
+                        <li>
+                            <a href="/about">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/howto">How To</a>
+                        </li>
+                    </ul>
             </nav>
         </div>
         <div class="navbar-2"   id="nav2">
@@ -45,14 +45,14 @@
     <div class="container">
         <div class="wrapper">
         <h3>Sign In</h3>
-            <form action="">
+            <form action="/login" method="post">
                 <div class="input">
                     <label for="email">email address</label>
-                    <input type="text" id="email" placeholder="example@gmail.com" autocomplete="email">
+                    <input type="text" id="email" name="username" placeholder="example@gmail.com" autocomplete="email">
                 </div>
                 <div class="input">
                     <label for="password">password</label>
-                    <input type="password" id="password" placeholder="********" autocomplete="current-password">
+                    <input type="password" id="password" name="password" placeholder="********" autocomplete="current-password">
                 </div>
                 <div class="btn center">
                     <button>Sign In</button>
@@ -65,7 +65,7 @@
                 <div class="google center">
                     <div class="center">
                         <img src="../../public/images/signIn-page/google-icon.png" alt="">
-                        <button>Continue with Google</button>
+                        <a href="/auth/google" role="button">Continue with Google</a>
                     </div>
                 </div>
             </div>
