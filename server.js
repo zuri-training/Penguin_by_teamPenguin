@@ -22,6 +22,18 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Get Category Model 
+let Category = require('./models/category');
+
+// Get all categories so that i can access it across pages(using app.locals)
+Category.find(function (err, categories) {
+    if (err) {
+        console.log(err);
+    } else {
+        app.locals.categories = categories;
+    }
+});
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -38,37 +50,37 @@ passport.deserializeUser(function(id, done) {
   })
 });
 
-passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/",
-    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //   return cb(err, user);
-    // });
-    User.findOne({
-      fullName: profile.displayName 
-  }, function(err, user) {
-      if (err) {
-          return cb(err);
-      }
-      //No user was found... so create a new user with values from Facebook (all the profile. stuff)
-      if (!user) {
-        User.register( { username: profile.displayName + "@gmail.com", fullName: profile.displayName, email: profile.displayName + "@gmail.com", googleId: profile.id }, profile.id );
-      } else {
-          //found user. Return
-          return cb(err, user);
-      }
-  });
-  }
-));
+// passport.use(new GoogleStrategy({
+//     clientID: process.env.CLIENT_ID,
+//     clientSecret: process.env.CLIENT_SECRET,
+//     callbackURL: "http://localhost:3000/auth/google/",
+//     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     console.log(profile);
+//     // User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//     //   return cb(err, user);
+//     // });
+//     User.findOne({
+//       fullName: profile.displayName 
+//   }, function(err, user) {
+//       if (err) {
+//           return cb(err);
+//       }
+//       //No user was found... so create a new user with values from Facebook (all the profile. stuff)
+//       if (!user) {
+//         User.register( { username: profile.displayName + "@gmail.com", fullName: profile.displayName, email: profile.displayName + "@gmail.com", googleId: profile.id }, profile.id );
+//       } else {
+//           //found user. Return
+//           return cb(err, user);
+//       }
+//   });
+//   }
+// ));
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/views/Home/home.html");
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/views/Home/home.html");
+// });
 
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] })
@@ -89,17 +101,17 @@ app.get("/login", (req, res) => {
   res.render("Sign-in/SignIn", {error: " "});
 });
 
-app.get("/categories", (req, res) => {
-  res.sendFile(__dirname + "/views/Category/Category.html");
-});
+// app.get("/categories", (req, res) => {
+//   res.sendFile(__dirname + "/views/Category/Category.html");
+// });
 
-app.get("/products", (req, res) => {
-  res.sendFile(__dirname + "/views/product/product.html");
-});
+// app.get("/products", (req, res) => {
+//   res.sendFile(__dirname + "/views/product/product.html");
+// });
 
-app.get("/search", (req, res) => {
-  res.sendFile(__dirname + "/views/search/search.html");
-});
+// app.get("/search", (req, res) => {
+//   res.sendFile(__dirname + "/views/search/search.html");
+// });
 
 app.get("/getfav", (req, res) => {
   if (req.isAuthenticated()) {
@@ -186,6 +198,12 @@ app.post('/login', function(req, res, next) {
     });
   })(req, res, next);
 });
+
+//routes
+const productRoutes = require("./routes/productRoute");
+
+//product routes
+app.use("/", productRoutes);
 
 app.listen(3000, () => {
   console.log(`Server started on port 3000`);
