@@ -170,7 +170,7 @@ app.post("/signup", (req, res) => {
 app.post('/login', function(req, res, next) {
   passport.authenticate('local', function(err, user, info) {
     if (err) {
-      console.log(err.message);
+      console.log(err.message); 
       return next(err); // will generate a 500 error
     }
     // Generate a JSON response reflecting authentication status
